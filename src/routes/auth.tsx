@@ -36,7 +36,7 @@ function AuthPage() {
           localStorage.getItem("crescendo_users") || "[]",
         );
         if (mode === "signup") {
-          if (users.find((u: any) => u.email === email)) {
+          if (users.find((u) => u.email === email)) {
             setLoading(false);
             return toast.error("Account already exists with this email");
           }
@@ -50,7 +50,7 @@ function AuthPage() {
           navigate({ to: "/" });
         } else {
           const user = users.find(
-            (u: any) => u.email === email && u.password === password,
+            (u) => u.email === email && u.password === password,
           );
           // Allow the hardcoded demo to pass always as a fallback
           if (

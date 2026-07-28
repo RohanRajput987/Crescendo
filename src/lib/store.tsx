@@ -63,7 +63,9 @@ export function FinanceProvider({ children }: { children: ReactNode }) {
             email: parsed.email,
           };
         }
-      } catch (e) {}
+      } catch {
+        return null;
+      }
     }
     return { id: "demo", name: "Alex Morgan", email: "alex@crescendo.app" };
   });
