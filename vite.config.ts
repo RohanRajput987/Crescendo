@@ -30,14 +30,14 @@ export default defineConfig(({ command, mode }) => {
   if (command === "build") {
     const nitroOptions: Record<string, unknown> = {
       preset: nitroPreset,
-      output: {
-        dir: "dist",
-        serverDir: "dist/server",
-        publicDir: "dist/client",
-      },
     };
 
     if (nitroPreset === "cloudflare-module") {
+      nitroOptions.output = {
+        dir: "dist",
+        serverDir: "dist/server",
+        publicDir: "dist/client",
+      };
       nitroOptions.cloudflare = { nodeCompat: true, deployConfig: true };
     }
 
